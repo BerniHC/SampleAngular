@@ -1,0 +1,20 @@
+﻿
+<div class="alert alert-info">
+    Server Date Time: <span ng-bind="listAuctions.serverDateTime | date: 'yyyy-mm-dd HH:mm:ss'"></span>
+</div>
+<div class="row" >
+    <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="a in listAuctions.auctions">
+        <div class="thumbnail">
+            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUyOWFhZDUwZTkgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTI5YWFkNTBlOSI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTAwMDAzODE0Njk3MyIgeT0iMTA1LjciPjI0MngyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="Image">
+            <div class="caption">
+                <h3 ng-bind="a.Name"></h3>
+                <p ng-bind="a.Price"></p>
+                <p ng-bind="a.EndDateTime | date: 'yyyy-mm-dd HH:mm:ss'"></p>
+                <p>
+                    <button class="btn btn-primary" type="button" ng-click="send(a)">Send</button>
+                    <button class="btn btn-default" type="button">Exit</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

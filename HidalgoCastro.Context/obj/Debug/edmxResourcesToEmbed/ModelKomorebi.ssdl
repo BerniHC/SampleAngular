@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KomorebiDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Estate" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Auth">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUser" Type="int" Nullable="false" />
+    <Property Name="Token" Type="nvarchar" MaxLength="512" Nullable="false" />
+    <Property Name="IpAddress" Type="nvarchar" MaxLength="20" />
+    <Property Name="BrowserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BrowserVersion" Type="nvarchar" MaxLength="50" />
+    <Property Name="OSName" Type="nvarchar" MaxLength="50" />
+    <Property Name="OsVersion" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Carousel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" MaxLength="512" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Link" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="IdStore" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" MaxLength="512" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="ntext" Nullable="false" />
+    <Property Name="Keywords" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="IdProduct" />
+      <PropertyRef Name="IdCategory" />
+    </Key>
+    <Property Name="IdProduct" Type="int" Nullable="false" />
+    <Property Name="IdCategory" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductImage">
+    <Key>
+      <PropertyRef Name="IdProduct" />
+      <PropertyRef Name="IdImage" />
+    </Key>
+    <Property Name="IdProduct" Type="int" Nullable="false" />
+    <Property Name="IdImage" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RolePermission">
+    <Key>
+      <PropertyRef Name="IdRole" />
+      <PropertyRef Name="IdPermission" />
+    </Key>
+    <Property Name="IdRole" Type="int" Nullable="false" />
+    <Property Name="IdPermission" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Slogan" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="ntext" Nullable="false" />
+    <Property Name="Keywords" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IdUser" Type="int" Nullable="false" />
+    <Property Name="Logo" Type="nvarchar" MaxLength="512" Nullable="false" />
+    <Property Name="Theme" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="DeletedAt" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="StoreAddress">
+    <Key>
+      <PropertyRef Name="IdStore" />
+      <PropertyRef Name="IdAddress" />
+    </Key>
+    <Property Name="IdStore" Type="int" Nullable="false" />
+    <Property Name="IdAddress" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="StoreCarousel">
+    <Key>
+      <PropertyRef Name="IdStore" />
+      <PropertyRef Name="IdCarousel" />
+    </Key>
+    <Property Name="IdStore" Type="int" Nullable="false" />
+    <Property Name="IdCarousel" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="nchar" MaxLength="10" />
+    <Property Name="UpdatedAt" Type="nchar" MaxLength="10" />
+    <Property Name="DeletedAt" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="StoreTelephone">
+    <Key>
+      <PropertyRef Name="IdStore" />
+      <PropertyRef Name="IdTelephone" />
+    </Key>
+    <Property Name="IdStore" Type="int" Nullable="false" />
+    <Property Name="IdTelephone" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Telephone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Number" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Birthdate" Type="date" Nullable="false" />
+    <Property Name="Gender" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="SocialId" Type="int" Nullable="false" />
+    <Property Name="Provider" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="512" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="IdUser" />
+      <PropertyRef Name="IdRole" />
+    </Key>
+    <Property Name="IdUser" Type="int" Nullable="false" />
+    <Property Name="IdRole" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="DeletedAt" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Auth_User1">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Auth">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="Category" Type="Self.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="IdStore" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategory_Category1">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCategory">
+        <PropertyRef Name="IdCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategory_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCategory">
+        <PropertyRef Name="IdProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductImage_Image">
+    <End Role="Image" Type="Self.Image" Multiplicity="1" />
+    <End Role="ProductImage" Type="Self.ProductImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="IdImage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductImage_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductImage" Type="Self.ProductImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="IdProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolePermission_Permission">
+    <End Role="Permission" Type="Self.Permission" Multiplicity="1" />
+    <End Role="RolePermission" Type="Self.RolePermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permission">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolePermission">
+        <PropertyRef Name="IdPermission" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolePermission_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="RolePermission" Type="Self.RolePermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolePermission">
+        <PropertyRef Name="IdRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_User1">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Store" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreAddress_Address">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="StoreAddress" Type="Self.StoreAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreAddress">
+        <PropertyRef Name="IdAddress" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreAddress_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="StoreAddress" Type="Self.StoreAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreAddress">
+        <PropertyRef Name="IdStore" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreCarousel_Carousel">
+    <End Role="Carousel" Type="Self.Carousel" Multiplicity="1" />
+    <End Role="StoreCarousel" Type="Self.StoreCarousel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carousel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreCarousel">
+        <PropertyRef Name="IdCarousel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreCarousel_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="StoreCarousel" Type="Self.StoreCarousel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreCarousel">
+        <PropertyRef Name="IdStore" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreTelephone_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="StoreTelephone" Type="Self.StoreTelephone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreTelephone">
+        <PropertyRef Name="IdStore" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreTelephone_Telephone">
+    <End Role="Telephone" Type="Self.Telephone" Multiplicity="1" />
+    <End Role="StoreTelephone" Type="Self.StoreTelephone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Telephone">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreTelephone">
+        <PropertyRef Name="IdTelephone" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="IdRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KomorebiDBModelStoreContainer">
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Auth" EntityType="Self.Auth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Carousel" EntityType="Self.Carousel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permission" EntityType="Self.Permission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductImage" EntityType="Self.ProductImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RolePermission" EntityType="Self.RolePermission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StoreAddress" EntityType="Self.StoreAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StoreCarousel" EntityType="Self.StoreCarousel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StoreTelephone" EntityType="Self.StoreTelephone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Telephone" EntityType="Self.Telephone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Auth_User1" Association="Self.FK_Auth_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Auth" EntitySet="Auth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_Store" Association="Self.FK_Category_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Category" EntitySet="Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategory_Category1" Association="Self.FK_ProductCategory_Category1">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="ProductCategory" EntitySet="ProductCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategory_Product" Association="Self.FK_ProductCategory_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductCategory" EntitySet="ProductCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductImage_Image" Association="Self.FK_ProductImage_Image">
+      <End Role="Image" EntitySet="Image" />
+      <End Role="ProductImage" EntitySet="ProductImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductImage_Product" Association="Self.FK_ProductImage_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductImage" EntitySet="ProductImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolePermission_Permission" Association="Self.FK_RolePermission_Permission">
+      <End Role="Permission" EntitySet="Permission" />
+      <End Role="RolePermission" EntitySet="RolePermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolePermission_Role" Association="Self.FK_RolePermission_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="RolePermission" EntitySet="RolePermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_User1" Association="Self.FK_Store_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreAddress_Address" Association="Self.FK_StoreAddress_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="StoreAddress" EntitySet="StoreAddress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreAddress_Store" Association="Self.FK_StoreAddress_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="StoreAddress" EntitySet="StoreAddress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreCarousel_Carousel" Association="Self.FK_StoreCarousel_Carousel">
+      <End Role="Carousel" EntitySet="Carousel" />
+      <End Role="StoreCarousel" EntitySet="StoreCarousel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreCarousel_Store" Association="Self.FK_StoreCarousel_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="StoreCarousel" EntitySet="StoreCarousel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreTelephone_Store" Association="Self.FK_StoreTelephone_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="StoreTelephone" EntitySet="StoreTelephone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreTelephone_Telephone" Association="Self.FK_StoreTelephone_Telephone">
+      <End Role="Telephone" EntitySet="Telephone" />
+      <End Role="StoreTelephone" EntitySet="StoreTelephone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Role" Association="Self.FK_UserRole_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_User" Association="Self.FK_UserRole_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,44 @@
+﻿<div class="row">
+    <div class="col-md-6">
+        <table class="table table-striped">
+            <tr>
+                <th>Title</th>
+                <td ng-bind="product.Title"></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td ng-bind="product.Description"></td>
+            </tr>
+            <tr>
+                <th>Keywords</th>
+                <td ng-bind="product.Keywords"></td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td ng-bind="product.Price"></td>
+            </tr>
+            <tr>
+                <th>Created At</th>
+                <td ng-bind="product.CreatedAt | date: 'yyyy/MM/dd hh:mm a'"></td>
+            </tr>
+            <tr>
+                <th>Updated At</th>
+                <td ng-bind="product.UpdatedAt | date: 'yyyy/MM/dd hh:mm a'"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="i in product.Images">
+                <ui-thumbnail class="img-thumbnail" src="i.Path" alt="{{ i.Description }}" title="{{ i.Description }}"></ui-thumbnail>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="form-group">
+            <button class="btn btn-primary" type="button" ng-click="edit(product)">Edit</button>
+            <button class="btn btn-default" type="button" ng-click="delete(product)">Delete</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>

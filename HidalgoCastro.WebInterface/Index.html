@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html ng-app="SampleAngular">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <title>Sample Angular</title>
+
+    <!-- Styles -->
+    <link type="text/css" href="Lib/Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link type="text/css" href="Lib/FontAwesome/css/font-awesome.css" rel="stylesheet" />
+    <link type="text/css" href="Lib/Animate/nga.all.css" rel="stylesheet" />
+    <link type="text/css" href="Assets/Styles/Layout.css" rel="stylesheet" />
+
+</head>
+<body ng-controller="MainController">
+    <div class="backdrop" ng-if="showLoader()">
+        <div class="loader">
+            <i class="fa fa-circle-o-notch fa-spin fa-3x"></i>
+        </div>
+        <h4>Loading...</h4>
+    </div>
+    <div class="sidebar-wrap">
+        <!-- Sidebar -->
+        <div class="sidebar" ng-include="'App/Views/Partials/Sidebar.html'"></div>
+
+        <!-- Main Container -->
+        <div class="main-container">
+            <!-- TopBar -->
+            <div ng-include="'App/Views/Partials/Topbar.html'"></div>
+
+            <!-- Content -->
+            <div class="container" ui-view></div>
+        </div>
+    </div>
+
+    <!-- Libs -->
+    <script type="text/javascript" src="Lib/JQuery/jquery.min.js"></script>
+    <script type="text/javascript" src="Lib/Angular/angular.js"></script>
+    <script type="text/javascript" src="Lib/Angular/angular-animate.js"></script>
+    <script type="text/javascript" src="Lib/Angular/angular-cookies.js"></script>
+    <script type="text/javascript" src="Lib/Angular/angular-resource.js"></script>
+    <script type="text/javascript" src="Lib/Angular/angular-sanitize.js"></script>
+    <script type="text/javascript" src="Lib/UIBootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="Lib/UIRouter/angular-ui-router.js"></script>
+    <script type="text/javascript" src="Lib/AngularDialogs/dialogs.js"></script>
+    <script type="text/javascript" src="Lib/DropzoneJS/dropzone.js"></script>
+    <script type="text/javascript" src="Lib/AngularThumbnail/angular-thumbnail.js"></script>
+    <script type="text/javascript" src="Lib/SignalR/jquery.signalR-2.2.0.js"></script>
+
+    <!-- App -->
+    <script type="text/javascript" src="App/App.js"></script>
+    <script type="text/javascript" src="App/Config.js"></script>
+    <script type="text/javascript" src="App/Routes.js"></script>
+    <script type="text/javascript" src="App/Directives.js"></script>
+    <script type="text/javascript" src="App/Filters.js"></script>
+
+    <!-- Services -->
+    <script type="text/javascript" src="App/Services/DataModel.js"></script>
+    <script type="text/javascript" src="App/Services/DataTable.js"></script>
+    <script type="text/javascript" src="App/Services/HttpInteceptor.js"></script>
+    <script type="text/javascript" src="App/Services/Loader.js"></script>
+
+    <!-- Models -->
+    <script type="text/javascript" src="App/Models/Product.js"></script>
+    <script type="text/javascript" src="App/Models/Permission.js"></script>
+    <script type="text/javascript" src="App/Models/Role.js"></script>
+
+    <!-- Controllers -->
+    <script type="text/javascript" src="App/Controllers/MainController.js"></script>
+    <script type="text/javascript" src="App/Controllers/HomeController.js"></script>
+    <script type="text/javascript" src="App/Controllers/TopbarController.js"></script>
+    <script type="text/javascript" src="App/Controllers/SidebarController.js"></script>
+    <script type="text/javascript" src="App/Controllers/DashboardController.js"></script>
+    <script type="text/javascript" src="App/Controllers/ProductController.js"></script>
+    <script type="text/javascript" src="App/Controllers/RoleController.js"></script>
+    <script type="text/javascript" src="App/Controllers/PermissionController.js"></script>
+    <script type="text/javascript" src="App/Controllers/AuctionController.js"></script>
+
+    <!-- SignalR -->
+    <script type="text/javascript" src="signalr/hubs"></script>
+
+</body>
+</html>

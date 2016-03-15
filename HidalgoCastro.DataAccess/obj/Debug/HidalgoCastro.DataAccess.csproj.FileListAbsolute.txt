@@ -1,0 +1,83 @@
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.DataAccess.dll.config
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.DataAccess.dll
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.DataAccess.pdb
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Context.dll
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Entities.dll
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Context.pdb
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Entities.pdb
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.dll
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.pdb
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.DataAccess\bin\Debug\System.Linq.Dynamic.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.DataAccess.dll.config
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.DataAccess.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.DataAccess.pdb
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Context.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Entities.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\System.Linq.Dynamic.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\FluentValidation.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Context.pdb
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Entities.pdb
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\FluentValidation.pdb
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\FluentValidation.xml
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\cs\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\da\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\de\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\es\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\fi\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\fr\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\it\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\ko\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\mk\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\nl\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\pl\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\pt\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\ru\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\sv\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\tr\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\zh-CN\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.pdb
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.DataAccess.dll.config
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.DataAccess.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.DataAccess.pdb
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Context.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Entities.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\System.Linq.Dynamic.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\FluentValidation.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Context.pdb
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Entities.pdb
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\FluentValidation.pdb
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\FluentValidation.xml
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\cs\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\da\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\de\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\es\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\fi\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\fr\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\it\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\ko\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\mk\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\nl\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\pl\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\pt\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\ru\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\sv\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\tr\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\zh-CN\FluentValidation.resources.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.pdb

@@ -1,0 +1,45 @@
+﻿<div class="row" ng-enter-key="save()">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="control-label">Title</label>
+            <input class="form-control" type="text" ng-model="product.Title" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Description</label>
+            <textarea class="form-control" rows="2" ng-model="product.Description"></textarea>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Keywords</label>
+            <input class="form-control" type="text" ng-model="product.Keywords" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Price</label>
+            <input class="form-control" type="number" ng-model="product.Price" />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="control-label">Images</label>
+            <form class="dropzone" dropzone="dropzoneConfig"></form>
+        </div>
+        <div class="thumbs">
+            <div class="dz-preview dz-file-preview" ng-repeat="i in product.Images">
+                <div class="dz-image">
+                    <ui-thumbnail src="i.Path" alt="{{ i.Description }}" title="{{ i.Description }}"></ui-thumbnail>
+                </div>
+                <div class="dz-details">
+                    <div class="dz-size">
+                        <span data-dz-size></span>
+                    </div>
+                </div>
+                <a class="btn btn-default btn-block dz-remove" href="javascript:undefined;">Remove</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="form-group">
+            <button class="btn btn-success" type="button" ng-click="save()">Save</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>

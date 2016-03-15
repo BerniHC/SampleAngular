@@ -1,0 +1,13 @@
+﻿<hgroup class="page-header">
+    <h1>Products</h1>
+</hgroup>
+<div class="row">
+    <!-- List Table -->
+    <div class="col-xs-12 nga-fast nga-stagger nga-slide-right" ng-include="'App/Views/Admin/Products/List.html'" ng-if="!showAdd && !showEdit && !showView"></div>
+    <!-- Add Form -->
+    <div class="col-xs-12 nga-fast nga-stagger nga-slide-right" ng-include="'App/Views/Admin/Products/Add.html'" ng-if="showAdd"></div>
+    <!-- Edit Form -->
+    <div class="col-xs-12 nga-fast nga-stagger nga-slide-right" ng-include="'App/Views/Admin/Products/Edit.html'" ng-if="showEdit"></div>
+    <!-- View Form -->
+    <div class="col-xs-12 nga-fast nga-stagger nga-slide-right" ng-include="'App/Views/Admin/Products/View.html'" ng-if="showView"></div>
+</div>

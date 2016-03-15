@@ -1,0 +1,39 @@
+﻿<!-- Pagination -->
+<div class="row">
+    <div class="form-inline hidden-xs col-sm-6 col-md-4">
+        <div class="form-group">
+            <label class="control-label">Count</label>
+            <select class="form-control" ng-model="table.options.count" ng-options="c for c in table.options.counts" ng-change="table.first()"></select>
+        </div>
+    </div>
+    <div class="hidden-xs hidden-sm col-md-4 text-center">
+        Showing <span ng-bind="table.info().start"></span> to <span ng-bind="table.info().end"></span> of <span ng-bind="table.info().total"></span> entries.
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+        <ul class="pagination pull-right">
+            <li>
+                <a ng-click="table.first()" title="First">
+                    <i class="fa fa-angle-double-left"></i>
+                </a>
+            </li>
+            <li ng-class="{ disabled: !table.hasPrevious() }">
+                <a ng-click="table.previous()" title="Previous">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            </li>
+            <li ng-class="{ active: p == table.options.page }" ng-repeat="p in table.options.pages">
+                <a ng-click="table.setPage(p)" ng-bind="p"></a>
+            </li>
+            <li ng-class="{ disabled: !table.hasNext() }">
+                <a ng-click="table.next()" title="Next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+            <li>
+                <a ng-click="table.last()" title="Last">
+                    <i class="fa fa-angle-double-right"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

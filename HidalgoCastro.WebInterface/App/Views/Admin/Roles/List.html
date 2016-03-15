@@ -1,0 +1,89 @@
+﻿<hgroup class="page-header">
+    <h1>Roles</h1>
+</hgroup>
+<div class="row">
+    <!-- Action Buttons -->
+    <div class="col-xs-12 col-md-8">
+        <div class="form-group">
+            <a class="btn btn-primary" href="#/admin/role/add">
+                <i class="fa fa-plus"></i> Add
+            </a>
+            <button class="btn btn-default" type="button" ng-class="{ disabled: !table.hasChecked() }" ng-click="deletes()">
+                <i class="fa fa-trash"></i> Delete
+            </button>
+        </div>
+    </div>
+    <!-- Search -->
+    <div class="col-xs-12 col-md-4">
+        <div class="form-group">
+            <div class="input-group">
+                <input class="form-control" type="text" ng-model="table.options.search" ng-enter-key="list()" placeholder="Search" />
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="list()" title="Search">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Table -->
+<table class="table table-bordered table-striped" ng-init="list()">
+    <thead>
+        <tr>
+            <th class="check">
+                <label class="checkbox" ng-click="table.checkAll(allItems)">
+                    <input type="checkbox" ng-model="allItems" />
+                    <i class="fa fa-check"></i>
+                </label>
+            </th>
+            <th ng-ratio="33" class="order" ng-class="table.order('Name')" ng-click="table.sort('Name')">
+                Name
+                <i class="fa fa-caret-down"></i>
+                <i class="fa fa-caret-up"></i>
+            </th>
+            <th ng-ratio="33" class="date order hidden-xs" ng-class="table.order('CreatedAt')" ng-click="table.sort('CreatedAt')">
+                Created At
+                <i class="fa fa-caret-down"></i>
+                <i class="fa fa-caret-up"></i>
+            </th>
+            <th ng-ratio="33" class="date order hidden-xs" ng-class="table.order('UpdatedAt')" ng-click="table.sort('UpdatedAt')">
+                Updated At
+                <i class="fa fa-caret-down"></i>
+                <i class="fa fa-caret-up"></i>
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-if="table.options.total < 1">
+            <td class="text-center" colspan="99">
+                Items not found
+            </td>
+        </tr>
+        <tr ng-repeat="i in table.data">
+            <td class="check">
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="i.Checked" />
+                    <i class="fa fa-check"></i>
+                </label>
+            </td>
+            <td ng-ratio="30" ng-bind="i.Name"></td>
+            <td ng-ratio="30" class="date hidden-xs" ng-bind="i.CreatedAt | date: 'yyyy/MM/dd hh:mm a'"></td>
+            <td ng-ratio="30" class="date hidden-xs" ng-bind="i.UpdatedAt | date: 'yyyy/MM/dd hh:mm a'"></td>
+            <td class="actions">
+                <a class="btn btn-default btn-sm" href="#/admin/role/{{ i.Id }}" ng-click="view(i)" title="View">
+                    <i class="fa fa-search"></i>
+                </a>
+                <a class="btn btn-default btn-sm" href="#/admin/role/{{ i.Id }}/edit" title="Edit">
+                    <i class="fa fa-pencil"></i>
+                </a>
+                <button class="btn btn-default btn-sm" type="button" ng-click="delete(i)" title="Delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<ng-include src="'/App/Views/Partials/Pagination.html'" />

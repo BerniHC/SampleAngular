@@ -1,0 +1,45 @@
+﻿app.factory('Loader', [
+    function () {
+        var process = [];
+
+        // Wait Process
+        var waitProcess = function (name) {
+            process.push(name);
+        }
+
+        // Release Process
+        var releaseProcess = function (name) {
+            var idx = process.indexOf(name);
+            if (idx > -1) {
+                process.splice(idx, 1);
+            }
+        }
+
+        // Show Loader
+        var showLoader = function () {
+            if (process.length > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // Get Guid
+        var getGuid = function () {
+            var d = new Date().getTime();
+            var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = (d + Math.random() * 16) % 16 | 0;
+                d = Math.floor(d / 16);
+                return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+            return guid;
+        };
+
+        return {
+            waitProcess: waitProcess,
+            releaseProcess: releaseProcess,
+            showLoader: showLoader,
+            getGuid: getGuid
+        }
+    }
+]);

@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SampleAngularModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SampleAngularEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Auth" EntityType="SampleAngularModel.Auth" />
+    <EntitySet Name="Category" EntityType="SampleAngularModel.Category" />
+    <EntitySet Name="Image" EntityType="SampleAngularModel.Image" />
+    <EntitySet Name="Permission" EntityType="SampleAngularModel.Permission" />
+    <EntitySet Name="Product" EntityType="SampleAngularModel.Product" />
+    <EntitySet Name="ProductCategory" EntityType="SampleAngularModel.ProductCategory" />
+    <EntitySet Name="ProductImage" EntityType="SampleAngularModel.ProductImage" />
+    <EntitySet Name="Role" EntityType="SampleAngularModel.Role" />
+    <EntitySet Name="RolePermission" EntityType="SampleAngularModel.RolePermission" />
+    <EntitySet Name="User" EntityType="SampleAngularModel.User" />
+    <EntitySet Name="UserRole" EntityType="SampleAngularModel.UserRole" />
+    <AssociationSet Name="FK_Auth_User1" Association="SampleAngularModel.FK_Auth_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Auth" EntitySet="Auth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategory_Category1" Association="SampleAngularModel.FK_ProductCategory_Category1">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="ProductCategory" EntitySet="ProductCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductImage_Image" Association="SampleAngularModel.FK_ProductImage_Image">
+      <End Role="Image" EntitySet="Image" />
+      <End Role="ProductImage" EntitySet="ProductImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolePermission_Permission" Association="SampleAngularModel.FK_RolePermission_Permission">
+      <End Role="Permission" EntitySet="Permission" />
+      <End Role="RolePermission" EntitySet="RolePermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategory_Product" Association="SampleAngularModel.FK_ProductCategory_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductCategory" EntitySet="ProductCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductImage_Product" Association="SampleAngularModel.FK_ProductImage_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductImage" EntitySet="ProductImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolePermission_Role" Association="SampleAngularModel.FK_RolePermission_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="RolePermission" EntitySet="RolePermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Role" Association="SampleAngularModel.FK_UserRole_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_User" Association="SampleAngularModel.FK_UserRole_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Auth">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="Token" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="IpAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BrowserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BrowserVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OSName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OsVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="User" Relationship="SampleAngularModel.FK_Auth_User1" FromRole="Auth" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="IdStore" Type="Int32" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+    <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ProductCategory" Relationship="SampleAngularModel.FK_ProductCategory_Category1" FromRole="Category" ToRole="ProductCategory" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Path" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ProductImage" Relationship="SampleAngularModel.FK_ProductImage_Image" FromRole="Image" ToRole="ProductImage" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="RolePermission" Relationship="SampleAngularModel.FK_RolePermission_Permission" FromRole="Permission" ToRole="RolePermission" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ProductCategory" Relationship="SampleAngularModel.FK_ProductCategory_Product" FromRole="Product" ToRole="ProductCategory" />
+    <NavigationProperty Name="ProductImage" Relationship="SampleAngularModel.FK_ProductImage_Product" FromRole="Product" ToRole="ProductImage" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="IdProduct" />
+      <PropertyRef Name="IdCategory" />
+    </Key>
+    <Property Name="IdProduct" Type="Int32" Nullable="false" />
+    <Property Name="IdCategory" Type="Int32" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Category" Relationship="SampleAngularModel.FK_ProductCategory_Category1" FromRole="ProductCategory" ToRole="Category" />
+    <NavigationProperty Name="Product" Relationship="SampleAngularModel.FK_ProductCategory_Product" FromRole="ProductCategory" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductImage">
+    <Key>
+      <PropertyRef Name="IdProduct" />
+      <PropertyRef Name="IdImage" />
+    </Key>
+    <Property Name="IdProduct" Type="Int32" Nullable="false" />
+    <Property Name="IdImage" Type="Int32" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Image" Relationship="SampleAngularModel.FK_ProductImage_Image" FromRole="ProductImage" ToRole="Image" />
+    <NavigationProperty Name="Product" Relationship="SampleAngularModel.FK_ProductImage_Product" FromRole="ProductImage" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="RolePermission" Relationship="SampleAngularModel.FK_RolePermission_Role" FromRole="Role" ToRole="RolePermission" />
+    <NavigationProperty Name="UserRole" Relationship="SampleAngularModel.FK_UserRole_Role" FromRole="Role" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="RolePermission">
+    <Key>
+      <PropertyRef Name="IdRole" />
+      <PropertyRef Name="IdPermission" />
+    </Key>
+    <Property Name="IdRole" Type="Int32" Nullable="false" />
+    <Property Name="IdPermission" Type="Int32" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Permission" Relationship="SampleAngularModel.FK_RolePermission_Permission" FromRole="RolePermission" ToRole="Permission" />
+    <NavigationProperty Name="Role" Relationship="SampleAngularModel.FK_RolePermission_Role" FromRole="RolePermission" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Birthdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="SocialId" Type="Int32" Nullable="false" />
+    <Property Name="Provider" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeletedAT" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Auth" Relationship="SampleAngularModel.FK_Auth_User1" FromRole="User" ToRole="Auth" />
+    <NavigationProperty Name="UserRole" Relationship="SampleAngularModel.FK_UserRole_User" FromRole="User" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="IdUser" />
+      <PropertyRef Name="IdRole" />
+    </Key>
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="IdRole" Type="Int32" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Role" Relationship="SampleAngularModel.FK_UserRole_Role" FromRole="UserRole" ToRole="Role" />
+    <NavigationProperty Name="User" Relationship="SampleAngularModel.FK_UserRole_User" FromRole="UserRole" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Auth_User1">
+    <End Type="SampleAngularModel.User" Role="User" Multiplicity="1" />
+    <End Type="SampleAngularModel.Auth" Role="Auth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Auth">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategory_Category1">
+    <End Type="SampleAngularModel.Category" Role="Category" Multiplicity="1" />
+    <End Type="SampleAngularModel.ProductCategory" Role="ProductCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCategory">
+        <PropertyRef Name="IdCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductImage_Image">
+    <End Type="SampleAngularModel.Image" Role="Image" Multiplicity="1" />
+    <End Type="SampleAngularModel.ProductImage" Role="ProductImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="IdImage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolePermission_Permission">
+    <End Type="SampleAngularModel.Permission" Role="Permission" Multiplicity="1" />
+    <End Type="SampleAngularModel.RolePermission" Role="RolePermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permission">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolePermission">
+        <PropertyRef Name="IdPermission" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategory_Product">
+    <End Type="SampleAngularModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="SampleAngularModel.ProductCategory" Role="ProductCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCategory">
+        <PropertyRef Name="IdProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductImage_Product">
+    <End Type="SampleAngularModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="SampleAngularModel.ProductImage" Role="ProductImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="IdProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolePermission_Role">
+    <End Type="SampleAngularModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="SampleAngularModel.RolePermission" Role="RolePermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolePermission">
+        <PropertyRef Name="IdRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Role">
+    <End Type="SampleAngularModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="SampleAngularModel.UserRole" Role="UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="IdRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_User">
+    <End Type="SampleAngularModel.User" Role="User" Multiplicity="1" />
+    <End Type="SampleAngularModel.UserRole" Role="UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

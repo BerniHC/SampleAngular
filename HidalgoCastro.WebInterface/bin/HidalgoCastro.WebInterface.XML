@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HidalgoCastro.WebInterface</name>
+    </assembly>
+    <members>
+        <member name="T:HidalgoCastro.WebInterface.Controllers.BlobsController">
+            <summary>
+            Controlador de almacenamiento de blobs
+            </summary>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.BlobsController.PostBlobUpload">
+            <summary>
+            Uploads one or more blob files.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.BlobsController.GetBlobDownload(System.Int32)">
+            <summary>
+            Downloads a blob file.
+            </summary>
+            <param name="blobId">The ID of the blob.</param>
+            <returns></returns>
+        </member>
+        <member name="T:HidalgoCastro.WebInterface.Controllers.PermissionController">
+            <summary>
+            Controlador de permisos
+            </summary>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.PermissionController.Get">
+            <summary>
+            Obtener todos los permisos
+            </summary>
+            <returns>Lista de permisos</returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.PermissionController.Get(System.Int32)">
+            <summary>
+            Obtener permiso por id
+            </summary>
+            <param name="id">Identificador</param>
+            <returns>Permiso seleccionado</returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.PermissionController.Paginate(HidalgoCastro.Entities.Pagination)">
+            <summary>
+            Paginar todos los permisos
+            </summary>
+            <param name="pagination">Opciones de paginación</param>
+            <returns></returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.PermissionController.Post(HidalgoCastro.Entities.Permission)">
+            <summary>
+            Agregar permiso
+            </summary>
+            <param name="permission">Permiso a agregar</param>
+            <returns>Permiso agregado</returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.PermissionController.Put(System.Int32,HidalgoCastro.Entities.Permission)">
+            <summary>
+            Actualizar permiso
+            </summary>
+            <param name="id">Identificador del permiso</param>
+            <param name="permission">Permiso a actualizar</param>
+            <returns>Permiso actualizado</returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.PermissionController.Delete(System.Int32)">
+            <summary>
+            Eliminar permiso por id
+            </summary>
+            <param name="id">Identificador de permiso</param>
+            <returns>Permiso eliminado</returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.PermissionController.Deletes(System.Int32[])">
+            <summary>
+            Eliminar permisos
+            </summary>
+            <param name="ids">Identificadores de permisos</param>
+            <returns>Permisos eliminados</returns>
+        </member>
+        <member name="T:HidalgoCastro.WebInterface.Controllers.ProductController">
+            <summary>
+            Controlador de productos
+            </summary>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.ProductController.Get">
+            <summary>
+            Obtener todos los roles
+            </summary>
+            <returns>Lista de roles</returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.ProductController.Get(System.Int32)">
+            <summary>
+            Obtener producto por id
+            </summary>
+            <param name="id">Identificador</param>
+            <returns>Producto seleccionado</returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.ProductController.Paginate(System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Filtrar todos los productos
+            </summary>
+            <param name="page">Número de página</param>
+            <param name="count">Cantidad de registros por página</param>
+            <param name="sort">Predicado de ordenamiento</param>
+            <param name="sortOrder">Dirección de ordenamiendo</param>
+            <param name="search">Búsqueda</param>
+            <returns>Lista de productos</returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.ProductController.Post(HidalgoCastro.Entities.Product)">
+            <summary>
+            Agregar producto
+            </summary>
+            <param name="product">Producto a agregar</param>
+            <returns>Producto agregado</returns>
+        </member>
+        <member name="T:HidalgoCastro.WebInterface.Controllers.RoleController">
+            <summary>
+            Controlador de roles
+            </summary>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.RoleController.Get">
+            <summary>
+            Obtener todos los roles
+            </summary>
+            <returns>Lista de roles</returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.RoleController.Get(System.Int32)">
+            <summary>
+            Obtener role por id
+            </summary>
+            <param name="id">Identificador</param>
+            <returns>Role seleccionado</returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.RoleController.Paginate(HidalgoCastro.Entities.Pagination)">
+            <summary>
+            Paginar todos los roles
+            </summary>
+            <param name="pagination">Opciones de paginación</param>
+            <returns></returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.RoleController.Post(HidalgoCastro.Entities.Role)">
+            <summary>
+            Agregar rol
+            </summary>
+            <param name="role">Rol a agregar</param>
+            <returns>Role agregado</returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.RoleController.Put(System.Int32,HidalgoCastro.Entities.Role)">
+            <summary>
+            Actualizar rol
+            </summary>
+            <param name="id">Identificador del rol</param>
+            <param name="role">Rol a actualizar</param>
+            <returns>Rol actualizado</returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.RoleController.Delete(System.Int32)">
+            <summary>
+            Eliminar rol por id
+            </summary>
+            <param name="id">Identificador de rol</param>
+            <returns>Rol eliminado</returns>
+        </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.RoleController.Deletes(System.Int32[])">
+            <summary>
+            Eliminar roles
+            </summary>
+            <param name="ids">Identificadores de roles</param>
+            <returns>Roles eliminados</returns>
+        </member>
+    </members>
+</doc>

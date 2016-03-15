@@ -1,0 +1,28 @@
+﻿<hgroup class="page-header">
+    <h1>Role</h1>
+</hgroup>
+<div class="row" ng-init="load()">
+    <div class="col-md-6">
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <td ng-bind="role.Name"></td>
+            </tr>
+            <tr>
+                <th>Created At</th>
+                <td ng-bind="role.CreatedAt | date: 'yyyy/MM/dd hh:mm a'"></td>
+            </tr>
+            <tr>
+                <th>Updated At</th>
+                <td ng-bind="role.UpdatedAt | date: 'yyyy/MM/dd hh:mm a'"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-xs-12">
+        <div class="form-group">
+            <a class="btn btn-primary" href="#/admin/role/{{ role.Id }}/edit">Edit</a>
+            <button class="btn btn-default" type="button" ng-click="delete(role)">Delete</button>
+            <a class="btn btn-default" href="#/admin/role">Cancel</a>
+        </div>
+    </div>
+</div>

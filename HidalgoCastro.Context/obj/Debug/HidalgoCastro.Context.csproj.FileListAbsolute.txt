@@ -1,0 +1,30 @@
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.Context\bin\Debug\HidalgoCastro.Context.dll.config
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.Context\bin\Debug\HidalgoCastro.Context.dll
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.Context\bin\Debug\HidalgoCastro.Context.pdb
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.Context\bin\Debug\EntityFramework.dll
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.Context\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.Context\bin\Debug\EntityFramework.xml
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.Context\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.Context\obj\Debug\HidalgoCastro.Context.dll
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.Context\obj\Debug\HidalgoCastro.Context.pdb
+C:\Users\Berni Hidalgo\documents\visual studio 2013\Projects\GamanMart\HidalgoCastro.Context\obj\Debug\HidalgoCastro.Context.csprojResolveAssemblyReference.cache
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.Context\bin\Debug\HidalgoCastro.Context.dll.config
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.Context\bin\Debug\HidalgoCastro.Context.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.Context\bin\Debug\HidalgoCastro.Context.pdb
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.Context\bin\Debug\EntityFramework.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.Context\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.Context\bin\Debug\EntityFramework.xml
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.Context\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.Context\obj\Debug\HidalgoCastro.Context.dll
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.Context\obj\Debug\HidalgoCastro.Context.pdb
+C:\Users\Berni Hidalgo\OneDrive\Projects\Visual Studio 2013\SampleAngular\HidalgoCastro.Context\obj\Debug\HidalgoCastro.Context.csprojResolveAssemblyReference.cache
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\bin\Debug\HidalgoCastro.Context.dll.config
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\bin\Debug\HidalgoCastro.Context.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\bin\Debug\HidalgoCastro.Context.pdb
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\bin\Debug\EntityFramework.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\bin\Debug\EntityFramework.xml
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\obj\Debug\HidalgoCastro.Context.csprojResolveAssemblyReference.cache
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\obj\Debug\HidalgoCastro.Context.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\obj\Debug\HidalgoCastro.Context.pdb
