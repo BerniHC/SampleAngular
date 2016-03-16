@@ -51,31 +51,7 @@ namespace HidalgoCastro.WebInterface.Controllers
                 return new Response<Entities.Permission>(null, ResponseStatus.ERROR, ex.Message);
             }
         }
-
-        /// <summary>
-        /// Paginar todos los permisos
-        /// </summary>
-        /// <param name="pagination">Opciones de paginación</param>
-        /// <returns></returns>
-        public Response<IEnumerable<Entities.Permission>> Paginate(Entities.Pagination pagination)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                    return new Response<IEnumerable<Entities.Permission>>(null, ResponseStatus.INVALID_REQUEST);
-
-                var result = dataPermission.Page(pagination);
-
-                var total = dataPermission.Count();
-
-                return new Response<IEnumerable<Entities.Permission>>(result, total, ResponseStatus.SUCCESS);
-            }
-            catch (Exception ex)
-            {
-                return new Response<IEnumerable<Entities.Permission>>(null, ResponseStatus.ERROR, ex.Message);
-            }
-        }
-
+        
         /// <summary>
         /// Agregar permiso
         /// </summary>

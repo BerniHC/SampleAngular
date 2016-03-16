@@ -53,25 +53,31 @@ namespace HidalgoCastro.WebInterface.Controllers
         /// <summary>
         /// Paginar todos los roles
         /// </summary>
-        /// <param name="pagination">Opciones de paginación</param>
-        /// <returns></returns>
-        [Route("api/role/paginate")]
-        public Response<IEnumerable<Entities.Role>> Paginate(Entities.Pagination pagination)
+        /// <param name="page">Número de página</param>
+        /// <param name="rows">Cantidad de filas por página</param>
+        /// <param name="sort">Predicado de ordenamiento</param>
+        /// <param name="order">Dirección de ordenamiento</param>
+        /// <param name="search">Términos de búsqueda</param>
+        /// <returns>Lista de roles con paginación</returns>
+        [HttpGet]
+        public Response<Entities.Pagination<Entities.Role>> Paginate(
+            int page = 1, int rows = 10, string sort = "Id", string order = "ASC", string search = "")
         {
             try
             {
-                if (!ModelState.IsValid)
-                    return new Response<IEnumerable<Entities.Role>>(null, ResponseStatus.INVALID_REQUEST);
-
-                var result = dataRole.Page(pagination);
+                var result = dataRole.Paginate(new Entities.Pagination<Entities.Role> {
+                    Page = page,
+                    RowsPerPage = rows,
+                    Sort = sort,
+                    Order = order,
+                    Search = search
+                });
                 
-                var total = dataRole.Count();
-
-                return new Response<IEnumerable<Entities.Role>>(result, total, ResponseStatus.SUCCESS);
+                return new Response<Entities.Pagination<Entities.Role>>(result, ResponseStatus.SUCCESS);
             }
             catch (Exception ex)
             {
-                return new Response<IEnumerable<Entities.Role>>(null, ResponseStatus.ERROR, ex.Message);
+                return new Response<Entities.Pagination<Entities.Role>>(null, ResponseStatus.ERROR, ex.Message);
             }
         }
 

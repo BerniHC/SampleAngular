@@ -81,3 +81,5 @@ C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\b
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.pdb
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Utilities.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Utilities.pdb

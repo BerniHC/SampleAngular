@@ -3,7 +3,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace HidalgoCastro.DataAccess
+namespace HidalgoCastro.Utilities
 {
 
     public static class ObjectContextExtensions
@@ -82,5 +82,6 @@ namespace HidalgoCastro.DataAccess
 
             return queryable.Provider.CreateQuery<T>(whereCallExpression);
         }
+
     }
 }

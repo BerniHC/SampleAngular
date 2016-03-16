@@ -3,7 +3,7 @@ using FluentValidation.Attributes;
 
 namespace HidalgoCastro.Entities
 {
-    [Validator(typeof(PaginationValidator))]
+    [Validator(typeof(PermissionValidator))]
     public class Permission : Timespan
     {
         public int Id { get; set; }

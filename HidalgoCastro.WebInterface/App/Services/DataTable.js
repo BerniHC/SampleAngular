@@ -25,15 +25,10 @@
             load: function () {
                 var order = this.options.reverse ? "DESC" : "ASC";
 
-                var data = {
-                    page: this.options.page,
-                    count: this.options.count,
-                    sort: this.options.sort,
-                    order: order,
-                    search: this.options.search
-                }
+                var url = $filter('format')("{0}/{1}/{2}/{3}/{4}/{5}",
+                    this.options.url, this.options.page, this.options.count, this.options.sort, order, this.options.search);
 
-                return $http.post(this.options.url + "/paginate", data).then(function (response) {
+                return $http.get(url).then(function (response) {
                     if (response.status == 200 && response.data.Status == 0) {
                         DataTable.prototype.data = response.data.Data;
                         DataTable.prototype.options.total = response.data.Count;

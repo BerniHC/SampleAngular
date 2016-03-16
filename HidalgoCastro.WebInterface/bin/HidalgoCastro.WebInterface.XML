@@ -40,13 +40,6 @@
             <param name="id">Identificador</param>
             <returns>Permiso seleccionado</returns>
         </member>
-        <member name="M:HidalgoCastro.WebInterface.Controllers.PermissionController.Paginate(HidalgoCastro.Entities.Pagination)">
-            <summary>
-            Paginar todos los permisos
-            </summary>
-            <param name="pagination">Opciones de paginación</param>
-            <returns></returns>
-        </member>
         <member name="M:HidalgoCastro.WebInterface.Controllers.PermissionController.Post(HidalgoCastro.Entities.Permission)">
             <summary>
             Agregar permiso
@@ -130,12 +123,16 @@
             <param name="id">Identificador</param>
             <returns>Role seleccionado</returns>
         </member>
-        <member name="M:HidalgoCastro.WebInterface.Controllers.RoleController.Paginate(HidalgoCastro.Entities.Pagination)">
+        <member name="M:HidalgoCastro.WebInterface.Controllers.RoleController.Paginate(System.Int32,System.Int32,System.String,System.String,System.String)">
             <summary>
             Paginar todos los roles
             </summary>
-            <param name="pagination">Opciones de paginación</param>
-            <returns></returns>
+            <param name="page">Número de página</param>
+            <param name="rows">Cantidad de filas por página</param>
+            <param name="sort">Predicado de ordenamiento</param>
+            <param name="order">Dirección de ordenamiento</param>
+            <param name="search">Términos de búsqueda</param>
+            <returns>Lista de roles con paginación</returns>
         </member>
         <member name="M:HidalgoCastro.WebInterface.Controllers.RoleController.Post(HidalgoCastro.Entities.Role)">
             <summary>

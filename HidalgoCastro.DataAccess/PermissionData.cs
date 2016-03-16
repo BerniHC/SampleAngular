@@ -29,34 +29,7 @@ namespace HidalgoCastro.DataAccess
                 throw ex;
             }
         }
-
-        /// <summary>
-        /// Paginar registros
-        /// </summary>
-        /// <param name="paginate">Paginacion a aplicar</param>
-        /// <returns>Lista de registros</returns>
-        public IEnumerable<Entities.Permission> Page(Entities.Pagination paginate)
-        {
-            try
-            {
-                using (var ctx = new Context.SampleAngularEntities())
-                {
-                    var permissions = ctx.Permission
-                        .Where(x => x.DeletedAt == null)
-                        .FullTextSearch(paginate.Search)
-                        .OrderBy(paginate.Sort + " " + paginate.Order)
-                        .Skip((paginate.Page - 1) * paginate.Count)
-                        .Take(paginate.Count).ToList();
-
-                    return permissions.Select(x => MapToEntity(x)).ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
+        
         /// <summary>
         /// Obtener cantidad total de registros
         /// </summary>

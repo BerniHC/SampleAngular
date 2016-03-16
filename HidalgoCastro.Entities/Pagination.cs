@@ -1,15 +1,15 @@
-﻿using FluentValidation;
-using FluentValidation.Attributes;
+﻿using System.Collections.Generic;
 
 namespace HidalgoCastro.Entities
 {
-    [Validator(typeof(PaginationValidator))]
-    public class Pagination
+    public class Pagination<T> : List<T>
     {
 
         public int Page { get; set; }
 
-        public int Count { get; set; }
+        public int RowsPerPage { get; set; }
+
+        public int TotalRows { get; set; }
 
         public string Sort { get; set; }
 
@@ -18,17 +18,5 @@ namespace HidalgoCastro.Entities
         public string Order { get; set; }
 
     }
-
-    public class PaginationValidator : AbstractValidator<Pagination>
-    {
-        public PaginationValidator()
-        {
-            RuleFor(x => x.Page).GreaterThan(0);
-            RuleFor(x => x.Count).GreaterThan(0);
-            RuleFor(x => x.Sort).NotNull().NotEmpty();
-            RuleFor(x => x.Order).NotNull().NotEmpty();
-            RuleFor(x => x.Search).NotNull();
-        }
-    }
-
+    
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HidalgoCastro.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Dynamic;
@@ -19,9 +20,9 @@ namespace HidalgoCastro.DataAccess
                 {
                     var roles = ctx.Role
                         .Where(x => x.DeletedAt == null)
-                        .Select(x => MapToEntity(x));
+                        .ToList();
 
-                    return roles;
+                    return roles.Select(x => MapToEntity(x));
                 }
             }
             catch (Exception ex)
@@ -33,22 +34,29 @@ namespace HidalgoCastro.DataAccess
         /// <summary>
         /// Paginar registros
         /// </summary>
-        /// <param name="paginate">Paginacion a aplicar</param>
+        /// <param name="pagination">Paginacion a aplicar</param>
         /// <returns>Lista de registros</returns>
-        public IEnumerable<Entities.Role> Page(Entities.Pagination paginate)
+        public Entities.Pagination<Entities.Role> Paginate(Entities.Pagination<Entities.Role> pagination)
         {
             try
             {
                 using (var ctx = new Context.SampleAngularEntities())
                 {
-                    var roles = ctx.Role
-                        .Where(x => x.DeletedAt == null)
-                        .FullTextSearch(paginate.Search)
-                        .OrderBy(paginate.Sort + " " + paginate.Order)
-                        .Skip((paginate.Page - 1) * paginate.Count)
-                        .Take(paginate.Count).ToList();
+                    var temp = ctx.Role
+                        .Where(x => x.DeletedAt == null);
 
-                    return roles.Select(x => MapToEntity(x)).ToList();
+                    var roles = temp
+                        .FullTextSearch(pagination.Search)
+                        .OrderBy(pagination.Sort + " " + pagination.Order)
+                        .Skip((pagination.Page - 1) * pagination.RowsPerPage)
+                        .Take(pagination.RowsPerPage).ToList();
+                    
+                    foreach (var role in roles)
+                        pagination.Add(MapToEntity(role));
+
+                    pagination.TotalRows = temp.Count();
+
+                    return pagination;
                 }
             }
             catch (Exception ex)
@@ -56,30 +64,7 @@ namespace HidalgoCastro.DataAccess
                 throw ex;
             }
         }
-
-        /// <summary>
-        /// Obtener cantidad total de registros
-        /// </summary>
-        /// <returns>Total de registros</returns>
-        public int Count()
-        {
-            try
-            {
-                using (var ctx = new Context.SampleAngularEntities())
-                {
-                    var count = ctx.Role
-                        .Where(x => x.DeletedAt == null)
-                        .Count();
-
-                    return count;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
+        
         /// <summary>
         /// Seleccionar registro por identificador
         /// </summary>

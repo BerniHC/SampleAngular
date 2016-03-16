@@ -53,7 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImageData.cs" />
-    <Compile Include="ObjectContextExtensions.cs" />
     <Compile Include="PermissionData.cs" />
     <Compile Include="ProductData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +70,10 @@
     <ProjectReference Include="..\HidalgoCastro.Entities\HidalgoCastro.Entities.csproj">
       <Project>{a3233bd8-aebe-48b4-ba3f-1fc7f42fff9b}</Project>
       <Name>HidalgoCastro.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HidalgoCastro.Utilities\HidalgoCastro.Utilities.csproj">
+      <Project>{15c82d5f-a827-4e25-81d6-5ff040c2bb73}</Project>
+      <Name>HidalgoCastro.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

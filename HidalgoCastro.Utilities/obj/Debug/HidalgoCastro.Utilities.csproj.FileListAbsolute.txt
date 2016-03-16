@@ -1,0 +1,4 @@
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Utilities\bin\Debug\HidalgoCastro.Utilities.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Utilities\bin\Debug\HidalgoCastro.Utilities.pdb
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Utilities\obj\Debug\HidalgoCastro.Utilities.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Utilities\obj\Debug\HidalgoCastro.Utilities.pdb

@@ -25,6 +25,19 @@ namespace HidalgoCastro.WebInterface
             );
 
             config.Routes.MapHttpRoute(
+                name: "Pagination",
+                routeTemplate: "api/{controller}/{page}/{rows}/{sort}/{order}/{search}",
+                defaults: new {
+                    action = "Paginate",
+                    page = RouteParameter.Optional,
+                    rows = RouteParameter.Optional,
+                    sort = RouteParameter.Optional,
+                    order = RouteParameter.Optional,
+                    search = RouteParameter.Optional
+                }
+            );
+
+            config.Routes.MapHttpRoute(
                 name: "PostBlobUpload",
                 routeTemplate: "blobs/upload",
                 defaults: new { controller = "Blobs", action = "PostBlobUpload" },

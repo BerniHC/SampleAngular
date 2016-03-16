@@ -259,3 +259,5 @@ C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\obj\Debug\HidalgoCastro.WebInterface.csprojResolveAssemblyReference.cache
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\obj\Debug\HidalgoCastro.WebInterface.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\obj\Debug\HidalgoCastro.WebInterface.pdb
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\HidalgoCastro.Utilities.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\HidalgoCastro.Utilities.pdb
