@@ -21,14 +21,7 @@ namespace HidalgoCastro.WebInterface.Models
             this.Data = data;
             this.Status = status;
         }
-
-        public Response(T data, int count, ResponseStatus status)
-        {
-            this.Data = data;
-            this.Count = count;
-            this.Status = status;
-        }
-
+        
         public Response(T data, ResponseStatus status, string message)
         {
             this.Data = data;
@@ -37,9 +30,7 @@ namespace HidalgoCastro.WebInterface.Models
         }
 
         public T Data { get; set; }
-
-        public int Count { get; set; }
-
+        
         public ResponseStatus Status { get; set; }
 
         public string Message { get; set; }

@@ -23,7 +23,7 @@ namespace HidalgoCastro.WebInterface.Controllers
             {
                 var result = dataRole.SelectAll();
 
-                return new Response<IEnumerable<Entities.Role>>(result, result.Count(), ResponseStatus.SUCCESS);
+                return new Response<IEnumerable<Entities.Role>>(result, ResponseStatus.SUCCESS);
             } 
             catch(Exception ex) 
             {
@@ -156,7 +156,7 @@ namespace HidalgoCastro.WebInterface.Controllers
             {
                 var result = dataRole.Delete(ids);
 
-                return new Response<IEnumerable<Entities.Role>>(result, result.Count(), ResponseStatus.SUCCESS);
+                return new Response<IEnumerable<Entities.Role>>(result, ResponseStatus.SUCCESS);
             }
             catch (Exception ex)
             {

@@ -25,7 +25,7 @@ namespace HidalgoCastro.WebInterface.Controllers
             {
                 var result = dataPermission.SelectAll();
 
-                return new Response<IEnumerable<Entities.Permission>>(result, result.Count(), ResponseStatus.SUCCESS);
+                return new Response<IEnumerable<Entities.Permission>>(result, ResponseStatus.SUCCESS);
             }
             catch (Exception ex)
             {
@@ -127,7 +127,7 @@ namespace HidalgoCastro.WebInterface.Controllers
             {
                 var result = dataPermission.Delete(ids);
 
-                return new Response<IEnumerable<Entities.Permission>>(result, result.Count(), ResponseStatus.SUCCESS);
+                return new Response<IEnumerable<Entities.Permission>>(result, ResponseStatus.SUCCESS);
             }
             catch (Exception ex)
             {

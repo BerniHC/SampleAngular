@@ -26,7 +26,7 @@ namespace HidalgoCastro.WebInterface.Controllers
             {
                 var result = dataProduct.SelectAll();
 
-                return new Response<IEnumerable<Entities.Product>>(result, result.Count(), ResponseStatus.SUCCESS);
+                return new Response<IEnumerable<Entities.Product>>(result, ResponseStatus.SUCCESS);
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace HidalgoCastro.WebInterface.Controllers
 
                 var total = dataProduct.Count();
 
-                return new Response<IEnumerable<Entities.Product>>(result, total, ResponseStatus.SUCCESS);
+                return new Response<IEnumerable<Entities.Product>>(result, ResponseStatus.SUCCESS);
             }
             catch (Exception ex)
             {

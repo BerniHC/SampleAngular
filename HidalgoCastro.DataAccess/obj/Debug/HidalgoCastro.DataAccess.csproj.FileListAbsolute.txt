@@ -54,10 +54,12 @@ C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\b
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Context.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Entities.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Utilities.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\System.Linq.Dynamic.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\FluentValidation.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Context.pdb
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Entities.pdb
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Utilities.pdb
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.xml
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\FluentValidation.pdb
@@ -81,5 +83,3 @@ C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\b
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\obj\Debug\HidalgoCastro.DataAccess.pdb
-C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Utilities.dll
-C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.DataAccess\bin\Debug\HidalgoCastro.Utilities.pdb

@@ -50,4 +50,3 @@ C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Entities\bin
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Entities\bin\Debug\zh-CN\FluentValidation.resources.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Entities\obj\Debug\HidalgoCastro.Entities.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Entities\obj\Debug\HidalgoCastro.Entities.pdb
-C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Entities\obj\Debug\HidalgoCastro.Entities.csprojResolveAssemblyReference.cache

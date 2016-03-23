@@ -50,10 +50,8 @@ namespace HidalgoCastro.DataAccess
                         .OrderBy(pagination.Sort + " " + pagination.Order)
                         .Skip((pagination.Page - 1) * pagination.RowsPerPage)
                         .Take(pagination.RowsPerPage).ToList();
-                    
-                    foreach (var role in roles)
-                        pagination.Add(MapToEntity(role));
 
+                    pagination.List = roles.Select(x => MapToEntity(x)).ToList();
                     pagination.TotalRows = temp.Count();
 
                     return pagination;

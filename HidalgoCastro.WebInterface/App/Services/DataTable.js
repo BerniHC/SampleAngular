@@ -30,8 +30,8 @@
 
                 return $http.get(url).then(function (response) {
                     if (response.status == 200 && response.data.Status == 0) {
-                        DataTable.prototype.data = response.data.Data;
-                        DataTable.prototype.options.total = response.data.Count;
+                        DataTable.prototype.data = response.data.Data.List;
+                        DataTable.prototype.options.total = response.data.Data.TotalRows;
                         DataTable.prototype.options.pages = [];
 
                         var pagesCount = Math.ceil(DataTable.prototype.options.total / DataTable.prototype.options.count);

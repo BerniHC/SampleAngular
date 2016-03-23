@@ -2,8 +2,9 @@
 
 namespace HidalgoCastro.Entities
 {
-    public class Pagination<T> : List<T>
+    public class Pagination<T>
     {
+        public List<T> List { get; set; }
 
         public int Page { get; set; }
 

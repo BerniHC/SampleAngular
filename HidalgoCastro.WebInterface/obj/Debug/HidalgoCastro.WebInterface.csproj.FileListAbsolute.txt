@@ -176,6 +176,7 @@ C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\System.Web.Http.WebHost.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\WebActivatorEx.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\HidalgoCastro.Context.dll
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\HidalgoCastro.Utilities.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\System.Linq.Dynamic.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\HidalgoCastro.DataAccess.pdb
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\HidalgoCastro.Entities.pdb
@@ -201,6 +202,7 @@ C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\System.Web.Http.xml
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\System.Web.Http.WebHost.xml
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\HidalgoCastro.Context.pdb
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\HidalgoCastro.Utilities.pdb
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\cs\FluentValidation.resources.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\da\FluentValidation.resources.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\de\FluentValidation.resources.dll
@@ -259,5 +261,3 @@ C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\obj\Debug\HidalgoCastro.WebInterface.csprojResolveAssemblyReference.cache
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\obj\Debug\HidalgoCastro.WebInterface.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\obj\Debug\HidalgoCastro.WebInterface.pdb
-C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\HidalgoCastro.Utilities.dll
-C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.WebInterface\bin\HidalgoCastro.Utilities.pdb
