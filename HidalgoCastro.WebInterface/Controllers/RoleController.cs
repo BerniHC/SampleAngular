@@ -150,7 +150,7 @@ namespace HidalgoCastro.WebInterface.Controllers
         /// </summary>
         /// <param name="ids">Identificadores de roles</param>
         /// <returns>Roles eliminados</returns>
-        public Response<IEnumerable<Entities.Role>> Deletes(int[] ids)
+        public Response<IEnumerable<Entities.Role>> Delete(int[] ids)
         {
             try
             {

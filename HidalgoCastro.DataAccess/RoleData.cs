@@ -165,6 +165,7 @@ namespace HidalgoCastro.DataAccess
 
                     if (role == null) return null;
 
+                    role.UpdatedAt = DateTime.Now;
                     role.DeletedAt = DateTime.Now;
 
                     ctx.SaveChanges();
@@ -192,9 +193,8 @@ namespace HidalgoCastro.DataAccess
                     var roles = ctx.Role
                         .Where(x => ids.Contains(x.Id) && x.DeletedAt == null)
                         .ToList();
-
-                    var current = DateTime.Now;
-                    roles.ForEach(x => x.DeletedAt = current);
+                    
+                    roles.ForEach(x => { x.UpdatedAt = DateTime.Now; x.DeletedAt = DateTime.Now; });
 
                     ctx.SaveChanges();
 

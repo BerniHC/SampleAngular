@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HidalgoCastro.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Dynamic;
@@ -19,9 +20,9 @@ namespace HidalgoCastro.DataAccess
                 {
                     var permissions = ctx.Permission
                         .Where(x => x.DeletedAt == null)
-                        .Select(x => MapToEntity(x));
+                        .ToList();
 
-                    return permissions;
+                    return permissions.Select(x => MapToEntity(x));
                 }
             }
             catch (Exception ex)
@@ -29,22 +30,31 @@ namespace HidalgoCastro.DataAccess
                 throw ex;
             }
         }
-        
+
         /// <summary>
-        /// Obtener cantidad total de registros
+        /// Paginar registros
         /// </summary>
-        /// <returns>Total de registros</returns>
-        public int Count()
+        /// <param name="pagination">Paginacion a aplicar</param>
+        /// <returns>Lista de registros</returns>
+        public Entities.Pagination<Entities.Permission> Paginate(Entities.Pagination<Entities.Permission> pagination)
         {
             try
             {
                 using (var ctx = new Context.SampleAngularEntities())
                 {
-                    var count = ctx.Permission
-                        .Where(x => x.DeletedAt == null)
-                        .Count();
+                    var temp = ctx.Permission
+                        .Where(x => x.DeletedAt == null);
 
-                    return count;
+                    var permissions = temp
+                        .FullTextSearch(pagination.Search)
+                        .OrderBy(pagination.Sort + " " + pagination.Order)
+                        .Skip((pagination.Page - 1) * pagination.RowsPerPage)
+                        .Take(pagination.RowsPerPage).ToList();
+
+                    pagination.List = permissions.Select(x => MapToEntity(x)).ToList();
+                    pagination.TotalRows = temp.Count();
+
+                    return pagination;
                 }
             }
             catch (Exception ex)
@@ -66,10 +76,9 @@ namespace HidalgoCastro.DataAccess
                 {
                     var permission = ctx.Permission
                         .Where(x => x.Id == id && x.DeletedAt == null)
-                        .Select(x => MapToEntity(x))
-                        .SingleOrDefault();
+                        .ToList();
 
-                    return permission;
+                    return permission.Select(x => MapToEntity(x)).SingleOrDefault();
                 }
             }
             catch (Exception ex)
@@ -156,6 +165,7 @@ namespace HidalgoCastro.DataAccess
 
                     if (permission == null) return null;
 
+                    permission.UpdatedAt = DateTime.Now;
                     permission.DeletedAt = DateTime.Now;
 
                     ctx.SaveChanges();
@@ -184,8 +194,7 @@ namespace HidalgoCastro.DataAccess
                         .Where(x => ids.Contains(x.Id) && x.DeletedAt == null)
                         .ToList();
 
-                    var current = DateTime.Now;
-                    permissions.ForEach(x => x.DeletedAt = current);
+                    permissions.ForEach(x => { x.UpdatedAt = DateTime.Now; x.DeletedAt = DateTime.Now; });
 
                     ctx.SaveChanges();
 

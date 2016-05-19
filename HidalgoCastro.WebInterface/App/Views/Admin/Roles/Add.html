@@ -9,8 +9,8 @@
         </div>
         <div class="form-group">
             <label class="control-label">Permissions</label>
-            <table class="table table-striped">
-                <tr ng-repeat="p in permissions">
+            <table class="table table-striped" ng-init="permissions.load()">
+                <tr ng-repeat="p in permissions.data">
                     <td class="check">
                         <label class="checkbox">
                             <input type="checkbox" ng-model="p.Checked" />

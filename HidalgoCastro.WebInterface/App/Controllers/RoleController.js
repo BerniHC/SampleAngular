@@ -1,5 +1,5 @@
-﻿app.controller("RoleController", ['$scope', '$filter', '$stateParams', '$state', 'Role', 'DataTable', 'Loader', 'dialogs', 'ResponseStatus',
-    function ($scope, $filter, $stateParams, $state, Role, DataTable, Loader, dialogs, ResponseStatus) {
+﻿app.controller("RoleController", ['$scope', '$filter', '$stateParams', '$state', 'Role', 'DataTable', 'DataList', 'Loader', 'dialogs', 'ResponseStatus',
+    function ($scope, $filter, $stateParams, $state, Role, DataTable, DataList, Loader, dialogs, ResponseStatus) {
 
         // --------------------------------------
         // Variables
@@ -7,6 +7,7 @@
 
         $scope.role = new Role();
         $scope.table = new DataTable('/api/role');
+        $scope.permissions = new DataList('/api/permission');
 
         // --------------------------------------
         // Main Functions
@@ -14,13 +15,7 @@
 
         // List
         $scope.list = function () {
-            Loader.waitProcess('role-list');
-
-            $scope.table.load().then(function () {
-                Loader.releaseProcess('role-list');
-            }, function () {
-                Loader.releaseProcess('role-list');
-            });
+            $scope.table.load();
         }
 
         // Load
@@ -82,16 +77,12 @@
             var dlg = dialogs.confirm('Confirmation', 'You are sure?', { size: 'sm' });
 
             dlg.result.then(function () {
-                Loader.waitProcess('role-deletes');
-
                 $scope.table.delete().then(function (response) {
-                    Loader.releaseProcess('role-deletes');
-
                     if (response.status == 200 && response.data.Status == ResponseStatus.Success) {
-                        $scope.list();
+                        console.log('deletes success!')
                     }
                 }, function (response) {
-                    Loader.releaseProcess('role-deletes');
+                    console.log('deletes failed!')
                 });
             });
         }

@@ -1,6 +1,8 @@
 ﻿app.factory('DataTable', ['$http', '$timeout', '$filter',
     function ($http, $timeout, $filter) {
 
+        var isLoading = false;
+
         // Constructor
         function DataTable(url) {
             if (url) {
@@ -23,6 +25,9 @@
                 search: '',
             },
             load: function () {
+                if (isLoading) return;
+                else isLoading = true;
+
                 var order = this.options.reverse ? "DESC" : "ASC";
 
                 var url = $filter('format')("{0}/{1}/{2}/{3}/{4}/{5}",
@@ -58,23 +63,40 @@
                             }
                         }
                     }
+
+                    isLoading = false;
+                }, function (response) {
+                    isLoading = false;
                 });
             },
             delete: function () {
-                var roles = $filter('filter')(this.data, { Checked: true });
+                if (isLoading) return;
+                else isLoading = true;
+
+                if (!this.hasChecked()) return;
+
+                var items = $filter('filter')(this.data, { Checked: true });
                 var ids = [];
-                angular.forEach(roles, function (role) {
-                    ids.push(role.Id);
+
+                angular.forEach(items, function (item) {
+                    ids.push(item.Id);
                 })
 
                 return $http({
                     url: this.options.url,
                     method: 'DELETE',
-                    data: roles,
+                    data: ids,
                     headers: { "Content-Type": "application/json;charset=utf-8" }
+                }).then(function() {
+                    isLoading = false;
+                    this.load();
+                }, function() {
+                    isLoading = false;
                 });
             },
             checkAll: function (value) {
+                if (isLoading) return;
+
                 angular.forEach(this.data, function (item) {
                     item.Checked = value;
                 });
@@ -94,36 +116,46 @@
                 return result;
             },
             setPage: function (page) {
+                if (isLoading) return;
+
                 this.options.page = page;
                 this.load();
             },
-            hasPrevious: function () {
-                return this.options.page > 1;
+            first: function () {
+                if (isLoading) return;
+
+                this.options.page = 1;
+                this.load();
+            },
+            last: function () {
+                if (isLoading) return;
+
+                var pagesCount = Math.ceil(this.options.total / this.options.count);
+                this.options.page = pagesCount;
+                this.load();
             },
             previous: function () {
+                if (isLoading) return;
+
                 if (this.hasPrevious()) {
                     this.options.page--;
                     this.load();
                 }
             },
-            hasNext: function () {
-                var pagesCount = Math.ceil(this.options.total / this.options.count);
-                return this.options.page < pagesCount;
-            },
             next: function () {
+                if (isLoading) return;
+
                 if (this.hasNext()) {
                     this.options.page++;
                     this.load();
                 }
             },
-            first: function () {
-                this.options.page = 1;
-                this.load();
+            hasPrevious: function () {
+                return this.options.page > 1;
             },
-            last: function () {
+            hasNext: function () {
                 var pagesCount = Math.ceil(this.options.total / this.options.count);
-                this.options.page = pagesCount;
-                this.load();
+                return this.options.page < pagesCount;
             },
             info: function () {
                 var start = (this.options.count * (this.options.page - 1));
@@ -136,6 +168,8 @@
                 };
             },
             sort: function (sort) {
+                if (isLoading) return;
+
                 this.options.reverse = (this.options.sort === sort) ? !this.options.reverse : false;
                 this.options.sort = sort;
 
@@ -149,6 +183,9 @@
                         return 'asc';
                     }
                 }
+            },
+            isLoading: function () {
+                return isLoading;
             }
         }
 

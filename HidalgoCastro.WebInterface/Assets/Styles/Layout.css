@@ -104,9 +104,13 @@ html, body {
 label.checkbox {
     width: 20px;
     height: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid transparent;
     padding: 0;
     margin: 0;
+    cursor: pointer;
+}
+label.checkbox:hover {
+    border: 1px solid #ccc;
 }
 label.checkbox > input[type=checkbox] {
     display: none;
@@ -125,14 +129,14 @@ label.checkbox > input[type=checkbox]:checked + .fa.fa-check {
 
 .backdrop {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 51px);
     position: fixed;
-    top: 0;
+    top: 51px;
     left: 0;
     z-index: 9999999;
     background: rgba(255,255,255,0.7);
 }
-.backdrop .loader {
+.loader {
     width: 70px;
     height: 70px;
     margin: 200px auto 10px;
@@ -142,7 +146,7 @@ label.checkbox > input[type=checkbox]:checked + .fa.fa-check {
     border-radius: 5px;
     padding: 13px;
 }
-.backdrop h4 {
+.loader + h4 {
     margin: 0 auto;
     width: 200px;
     display: block;

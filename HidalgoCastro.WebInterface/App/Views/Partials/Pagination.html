@@ -3,7 +3,7 @@
     <div class="form-inline hidden-xs col-sm-6 col-md-4">
         <div class="form-group">
             <label class="control-label">Count</label>
-            <select class="form-control" ng-model="table.options.count" ng-options="c for c in table.options.counts" ng-change="table.first()"></select>
+            <select class="form-control" ng-model="table.options.count" ng-options="c for c in table.options.counts" ng-change="table.first()" ng-disabled="table.isLoading()"></select>
         </div>
     </div>
     <div class="hidden-xs hidden-sm col-md-4 text-center">

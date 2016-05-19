@@ -1,6 +1,9 @@
 ﻿app.factory('DataList', ['$http', '$timeout', '$filter',
     function ($http, $timeout, $filter) {
 
+        var isLoading = false;
+        var isFirstTime = true;
+
         // Constructor
         function DataList(url) {
             if (url) {
@@ -8,151 +11,130 @@
             }
         }
 
-        // Methods
-        DataTable.prototype = {
+        // Métodos
+        DataList.prototype = {
+            // Arreglo de datos
             data: [],
+            // Opciones de configuración
             options: {
                 url: '/',
+                page: 1,
+                count: 10,
                 total: 0,
-                predicate: 'Id',
+                sort: 'Id',
                 reverse: false,
                 search: '',
             },
-            setOptions: function (options) {
-                if (options.url) this.options.url = options.url;
-                if (options.total) this.options.total = options.total;
-                if (options.predicate) this.options.predicate = options.predicate;
-                if (options.reverse) this.options.reverse = options.reverse;
-            },
+            // Cargar elementos
             load: function () {
-                var sortOrder = this.options.reverse ? 'DESC' : 'ASC';
-                var url =
-                    this.options.url + '/' +
-                    this.options.predicate + '/' +
-                    sortOrder + '/' +
-                    this.options.search;
+                // Verificar si ya está cargando
+                if (isLoading) return;
+                else isLoading = true;
 
+                // Verificar si faltan elementos por cargar
+                if (!this.hasMore()) return;
+
+                // Determinar orden
+                var order = this.options.reverse ? "DESC" : "ASC";
+
+                // Definir url
+                var url = $filter('format')("{0}/{1}/{2}/{3}/{4}/{5}",
+                    this.options.url, this.options.page, this.options.count, this.options.sort, order, this.options.search);
+
+                // Invocar servicio web
                 return $http.get(url).then(function (response) {
+                    // Verificar respuesta correcta
                     if (response.status == 200 && response.data.Status == 0) {
-                        DataTable.prototype.data = response.data.Data;
-                        DataTable.prototype.options.total = response.data.Count;
-                        DataTable.prototype.options.pages = [];
-
-                        var pagesCount = Math.ceil(DataTable.prototype.options.total / DataTable.prototype.options.count);
-                        if (pagesCount <= 5) {
-                            for (i = 1; i <= pagesCount; i++) {
-                                DataTable.prototype.options.pages.push(i);
-                            }
-                        } else {
-                            var start = DataTable.prototype.options.page - 2;
-                            var end = DataTable.prototype.options.page + 2;
-
-                            if (start < 1) {
-                                end += (1 - start);
-                                start = 1;
-                            }
-
-                            if (end > pagesCount) {
-                                start -= (end - pagesCount);
-                                end = pagesCount;
-                            }
-
-                            for (i = start; i <= end; i++) {
-                                DataTable.prototype.options.pages.push(i);
-                            }
-                        }
+                        // Agregar nuevos elementos al arreglo de datos
+                        DataList.prototype.data.push.apply(DataList.prototype.data, response.data.Data.List);
+                        DataList.prototype.options.total = response.data.Data.TotalRows;
                     }
+
+                    isLoading = false;
+                }, function (response) {
+                    isLoading = false;
                 });
             },
             delete: function () {
-                var roles = $filter('filter')(this.data, { Checked: true });
+                // Verificar si ya está cargando
+                if (isLoading) return;
+                else isLoading = true;
+
+                if (!this.hasChecked()) return;
+
+                var items = $filter('filter')(this.data, { Checked: true });
+                var ids = [];
+
+                angular.forEach(items, function (item) {
+                    ids.push(item.Id);
+                })
 
                 return $http({
                     url: this.options.url,
                     method: 'DELETE',
-                    data: roles,
+                    data: ids,
                     headers: { "Content-Type": "application/json;charset=utf-8" }
+                }).then(function () {
+                    isLoading = false;
+                    this.load();
+                }, function () {
+                    isLoading = false;
                 });
             },
             checkAll: function (value) {
+                // Verificar si ya está cargando
+                if (isLoading) return;
+
                 angular.forEach(this.data, function (item) {
                     item.Checked = value;
                 });
             },
             hasChecked: function () {
-                var result = false;
-
-                for (var i = 0; i < this.data.length; i++) {
-                    var item = this.data[i];
-
-                    if (item.Checked) {
-                        result = true;
-                        break;
-                    };
-                };
-
-                return result;
+                var checked = $filter('filter')(this.data, { Checked: true });
+                return checked.length > 0;
             },
-            setPage: function (page) {
-                this.options.page = page;
+            more: function () {
+                // Verificar si ya está cargando y si faltan elementos por cargar
+                if (isLoading && !this.hasMore()) return;
+
+                this.options.page++;
                 this.load();
             },
-            hasPrevious: function () {
-                return this.options.page > 1;
-            },
-            previous: function () {
-                if (this.hasPrevious()) {
-                    this.options.page--;
-                    this.load();
+            hasMore: function () {
+                if (isFirstTime) {
+                    return true;
                 }
-            },
-            hasNext: function () {
-                var pagesCount = Math.ceil(this.options.total / this.options.count);
-                return this.options.page < pagesCount;
-            },
-            next: function () {
-                if (this.hasNext()) {
-                    this.options.page++;
-                    this.load();
-                }
-            },
-            first: function () {
-                this.options.page = 1;
-                this.load();
-            },
-            last: function () {
-                var pagesCount = Math.ceil(this.options.total / this.options.count);
-                this.options.page = pagesCount;
-                this.load();
+
+                return this.data.length < this.options.total;
             },
             info: function () {
-                var start = (this.options.count * (this.options.page - 1));
-                var end = start + this.data.length;
-
                 return {
-                    start: start,
-                    end: end,
+                    length: this.data.length,
                     total: this.options.total
                 };
             },
-            sort: function (predicate) {
-                this.options.reverse = (this.options.predicate === predicate) ? !this.options.reverse : false;
-                this.options.predicate = predicate;
+            sort: function (sort) {
+                // Verificar si ya está cargando
+                if (isLoading) return;
 
-                this.load();
+                this.options.reverse = (this.options.sort === sort) ? !this.options.reverse : false;
+                this.options.sort = sort;
             },
-            sortOrder: function (predicate) {
-                if (this.options.predicate == predicate) {
+            order: function (sort) {
+                if (this.options.sort == sort) {
                     if (this.options.reverse) {
                         return 'desc';
                     } else {
                         return 'asc';
                     }
                 }
+            },
+            isLoading: function () {
+                return isLoading;
             }
         }
 
-        return DataTable;
+        return DataList;
 
     }
 ]);

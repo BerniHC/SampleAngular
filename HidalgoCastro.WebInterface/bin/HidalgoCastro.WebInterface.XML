@@ -33,6 +33,17 @@
             </summary>
             <returns>Lista de permisos</returns>
         </member>
+        <member name="M:HidalgoCastro.WebInterface.Controllers.PermissionController.Paginate(System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Paginar todos los roles
+            </summary>
+            <param name="page">Número de página</param>
+            <param name="rows">Cantidad de filas por página</param>
+            <param name="sort">Predicado de ordenamiento</param>
+            <param name="order">Dirección de ordenamiento</param>
+            <param name="search">Términos de búsqueda</param>
+            <returns>Lista de roles con paginación</returns>
+        </member>
         <member name="M:HidalgoCastro.WebInterface.Controllers.PermissionController.Get(System.Int32)">
             <summary>
             Obtener permiso por id
@@ -156,7 +167,7 @@
             <param name="id">Identificador de rol</param>
             <returns>Rol eliminado</returns>
         </member>
-        <member name="M:HidalgoCastro.WebInterface.Controllers.RoleController.Deletes(System.Int32[])">
+        <member name="M:HidalgoCastro.WebInterface.Controllers.RoleController.Delete(System.Int32[])">
             <summary>
             Eliminar roles
             </summary>
