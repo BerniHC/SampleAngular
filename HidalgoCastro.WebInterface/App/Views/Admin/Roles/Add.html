@@ -10,15 +10,34 @@
         <div class="form-group">
             <label class="control-label">Permissions</label>
             <table class="table table-striped" ng-init="permissions.load()">
-                <tr ng-repeat="p in permissions.data">
-                    <td class="check">
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model="p.Checked" />
-                            <i class="fa fa-check"></i>
-                        </label>
-                    </td>
-                    <td ng-bind="p.CodeName"></td>
-                </tr>
+                <tbody>
+                    <tr ng-if="!permissions.isLoading() && permissions.data.length < 1">
+                        <td class="text-center" colspan="99">
+                            Items not found
+                        </td>
+                    </tr>
+                    <tr ng-repeat="p in permissions.data">
+                        <td class="check">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="p.Checked" />
+                                <i class="fa fa-check"></i>
+                            </label>
+                        </td>
+                        <td ng-bind="p.CodeName"></td>
+                    </tr>
+                    <tr ng-if="permissions.isLoading()">
+                        <td class="text-center" colspan="99">
+                            <i class="fa fa-circle-o-notch fa-spin"></i>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr ng-if="permissions.hasMore() && !permissions.isLoading()">
+                        <td class="text-center" colspan="99">
+                            <a class="btn btn-link" ng-click="permissions.more()">Load more</a>
+                        </td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </div>

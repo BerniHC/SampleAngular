@@ -25,5 +25,6 @@ C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\bin\
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\bin\Debug\EntityFramework.xml
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\obj\Debug\HidalgoCastro.Context.csprojResolveAssemblyReference.cache
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\obj\Debug\HidalgoCastro.Context.dll
 C:\Users\Berni Hidalgo\Documents\GitHub\SampleAngular\HidalgoCastro.Context\obj\Debug\HidalgoCastro.Context.pdb

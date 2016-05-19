@@ -2,7 +2,6 @@
     function ($http, $timeout, $filter) {
 
         var isLoading = false;
-        var isFirstTime = true;
 
         // Constructor
         function DataList(url) {
@@ -32,8 +31,8 @@
                 else isLoading = true;
 
                 // Verificar si faltan elementos por cargar
-                if (!this.hasMore()) return;
-
+                //if (!this.hasMore()) return;
+                
                 // Determinar orden
                 var order = this.options.reverse ? "DESC" : "ASC";
 
@@ -95,16 +94,12 @@
             },
             more: function () {
                 // Verificar si ya está cargando y si faltan elementos por cargar
-                if (isLoading && !this.hasMore()) return;
+                if (isLoading || !this.hasMore()) return;
 
                 this.options.page++;
                 this.load();
             },
             hasMore: function () {
-                if (isFirstTime) {
-                    return true;
-                }
-
                 return this.data.length < this.options.total;
             },
             info: function () {
